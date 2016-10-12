@@ -43,11 +43,16 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  file { '/etc/motd':
-   ensure => file,
-   owner => 'root',
-   group => 'root',
-   mode => '0644',
-   content => "While the Puppet learning VM is helpful, it's much more valuable to me having a live instructors experience and alternative examples presented in this class!\n",
-   }
+notify { "Hello, my name is ${::hostname}": }
+#file { '/etc/motd':
+# ensure => file,
+# owner => 'root',
+# group => 'root',
+# mode => '0644',
+# content => "Today I learned what it means to manage state using Puppet.\n",
+#}
+exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+path => '/usr/bin:/usr/local/bin',
+creates => '/etc/motd',
+}
 }
