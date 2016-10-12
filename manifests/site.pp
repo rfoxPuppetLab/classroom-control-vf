@@ -45,11 +45,11 @@ node default {
   include role::classroom
 
 file { '/etc/motd':
-  ensure ==> file,
-  owner  ==> 'root',
-  group  ==> 'root',
-  mode   ==> '0440',
-  content ==> "This is pushed github!\n",
+  ensure => file,
+  owner  => 'root',
+  group  => 'root',
+  mode   => '0440',
+  content => "This is pushed github!\n",
 }  
  
 }
