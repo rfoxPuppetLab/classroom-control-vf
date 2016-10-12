@@ -49,7 +49,7 @@ file { '/etc/motd':
   owner  => 'root',
   group  => 'root',
   mode   => '0440',
-  content => "This is pushed github!\n",
+  content => "This is pushed out from github!\n",
 }  
  
 }
