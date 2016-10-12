@@ -43,8 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   
-  #include role::classroom
-  include users
+  include role::classroom::site
+  #include users
 
 #notify {"Hello, my name is ${::hostname}":}
 
