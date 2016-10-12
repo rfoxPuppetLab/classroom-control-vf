@@ -72,3 +72,4 @@ source => 'puppet:///modules/skeleton/bashrc',
 }
 }
 }
+}
