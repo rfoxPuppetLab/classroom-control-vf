@@ -1,5 +1,4 @@
 node default {
-include role::classroom::site::skeleton::manifests
 
   class skeleton {    
     file {'/etc/skel':      
