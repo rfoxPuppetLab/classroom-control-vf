@@ -1,4 +1,6 @@
-node default {    
+node default {
+include role::classroom
+
   class skeleton {    
     file {'/etc/skel':      
       ensure => directory,      
