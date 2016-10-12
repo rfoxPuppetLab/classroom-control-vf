@@ -1,4 +1,4 @@
-node default {
+
 
   class skeleton {    
     file {'/etc/skel':      
@@ -17,4 +17,4 @@ node default {
     }   
    } 
    
-   } 
+   
