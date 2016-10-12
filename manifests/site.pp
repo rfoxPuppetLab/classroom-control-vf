@@ -44,7 +44,14 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include users
+
 #notify { "Hello, my name is ${::hostname}": }
+
+#exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+#path => '/usr/bin:/usr/local/bin',
+#creates => '/etc/motd',
+#}
+
 #file { '/etc/motd':
 # ensure => file,
 # owner => 'root',
@@ -52,24 +59,5 @@ node default {
 # mode => '0644',
 # content => "Today I learned what it means to manage state using Puppet.\n",
 #}
-exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-path => '/usr/bin:/usr/local/bin',
-creates => '/etc/motd',
-}
-class skeleton {
-file { '/etc/skel':
-ensure => directory,
-owner => 'root',
-group => 'root',
-mode => '0755',
-}
-file { '/etc/skel/.bashrc':
-ensure => file,
-owner => 'root',
-group => 'root',
-mode => '0644',
-source => 'puppet:///modules/skeleton/bashrc',
-}
-}
-}
+ 
 }
