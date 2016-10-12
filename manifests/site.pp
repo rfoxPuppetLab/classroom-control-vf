@@ -44,12 +44,19 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 
-file { '/etc/motd':
-  ensure => file,
-  owner  => 'root',
-  group  => 'root',
-  mode   => '0440',
-  content => "This is pushed out from github!\n",
-}  
+notify {"Hello, my name is ${::hostname}":}
+
+exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+   path => '/usr/bin:/usr/local/bin',
+   creates => '/etc/motd',
+}
+
+#file { '/etc/motd':
+#  ensure => file,
+#  owner  => 'root',
+#  group  => 'root',
+#  mode   => '0440',
+#  content => "This is pushed out from github!\n",
+#}  
  
 }
