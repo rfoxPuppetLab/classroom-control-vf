@@ -1,5 +1,5 @@
-node default {   
-  include role::classroom
+#node default {   
+#  include role::classroom
   
 class users {   
   user {'fundamentals':     
@@ -7,4 +7,4 @@ class users {  
   } 
  }
  
-}
+#}
