@@ -49,7 +49,7 @@ if $::virtual != 'physical' {
 $vmname = capitalize($::virtual)
 notify { "${vmname} is this virtual machine.": }
 }
-}  
+ 
 
 #notify { "Hello, my name is ${::hostname}": }
 
