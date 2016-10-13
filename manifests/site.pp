@@ -45,6 +45,12 @@ node default {
   include role::classroom
   # include users
 
+if $::virtual != 'physical' {
+$vmname = capitalize($::virtual)
+notify { "${vmname} is this virtual machine.": }
+}
+}  
+
 #notify { "Hello, my name is ${::hostname}": }
 
 #exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
