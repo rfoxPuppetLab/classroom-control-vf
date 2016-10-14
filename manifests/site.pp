@@ -44,6 +44,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   # include users
+  include nginx
 
 if $::virtual != 'physical' {
 $vmname = capitalize($::virtual)
@@ -52,11 +53,6 @@ notify { "${vmname} is this virtual machine.": }
 
 $message = hiera('message')
  notify { $message: }
-
-class { 'nginx':
-  root => '/var/www/html',
-  }
-
 
 #notify { "Hello, my name is ${::hostname}": }
 
