@@ -52,7 +52,7 @@ notify { "${vmname} is this virtual machine.": }
 
 $message = hiera('message')
  notify { $message: }
-}
+
 
 #notify { "Hello, my name is ${::hostname}": }
 
